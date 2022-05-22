@@ -1,0 +1,13 @@
+com\micropos\products\repository\ProductRepository.class
+com\micropos\products\ProductsApplication.class
+com\micropos\products\dto\ErrorDto.class
+com\micropos\products\dto\ProductDto.class
+com\micropos\products\rest\ProductController.class
+com\micropos\products\service\ProductServiceImpl.class
+com\micropos\products\service\ProductService.class
+com\micropos\products\api\ProductsApi.class
+com\micropos\products\mapper\ProductMapperImpl.class
+com\micropos\products\repository\CacheHelper.class
+com\micropos\products\api\ApiUtil.class
+com\micropos\products\repository\JDRepository.class
+com\micropos\products\mapper\ProductMapper.class

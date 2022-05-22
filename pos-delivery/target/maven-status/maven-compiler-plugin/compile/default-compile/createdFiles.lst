@@ -1,0 +1,15 @@
+com\micro\delivery\mapper\ItemMapperImpl.class
+com\micro\delivery\consumer\MessageConsumer.class
+com\micro\delivery\repository\OrderRepository.class
+com\micro\delivery\rest\DeliveryController.class
+com\micro\delivery\checker\Sink.class
+com\micro\delivery\DeliveryApplication.class
+com\micropos\products\dto\ErrorDto.class
+com\micropos\products\dto\ItemFieldsDto.class
+com\micropos\products\dto\OrderDto.class
+com\micro\delivery\checker\DeliveryChecker.class
+com\micropos\products\api\ApiUtil.class
+com\micropos\products\api\DeliveryApi.class
+com\micropos\products\dto\ItemDto.class
+com\micropos\products\dto\ItemFieldsAllOfDto.class
+com\micro\delivery\mapper\ItemMapper.class

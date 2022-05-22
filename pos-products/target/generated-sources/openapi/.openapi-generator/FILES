@@ -1,0 +1,6 @@
+README.md
+pom.xml
+src/main/java/com/micropos/products/api/ApiUtil.java
+src/main/java/com/micropos/products/api/ProductsApi.java
+src/main/java/com/micropos/products/dto/ErrorDto.java
+src/main/java/com/micropos/products/dto/ProductDto.java
