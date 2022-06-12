@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 public class CartApplication {
 
     @Bean
-    @LoadBalanced
+    //@LoadBalanced
     RestTemplate restTemplate(){
         return new RestTemplate();
     }

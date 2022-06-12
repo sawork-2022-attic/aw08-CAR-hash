@@ -4,16 +4,18 @@ import com.micropos.cart.api.CartApi;
 import com.micropos.cart.dto.InlineObjectDto;
 import com.micropos.cart.dto.ItemDto;
 import com.micropos.cart.dto.ItemFieldsDto;
+import com.micropos.cart.integration.DeliveryGateway;
 import com.micropos.cart.mapper.ItemMapper;
-import com.micropos.cart.producer.MessageProducer;
 import com.micropos.cart.service.ICartService;
 import com.micropos.datatype.cart.Item;
 import com.micropos.datatype.cart.Order;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -27,7 +29,10 @@ public class CartController implements CartApi{
     private final ICartService cartService;
 
     @Autowired
-    MessageProducer messageProducer;
+    DeliveryGateway deliveryGateway;
+
+    @Autowired
+    RestTemplate restTemplate;
 
     public CartController(ICartService cartService, ItemMapper itemMapper) {
         this.itemMapper = itemMapper;
@@ -81,7 +86,11 @@ public class CartController implements CartApi{
 
         Order order=new Order(inlineObjectDto.getUsrId(),items);
 
-        messageProducer.sendOrder(order);
+        System.out.println(order.usrId);
+
+        String uri = "http://localhost:8084/show";
+
+        restTemplate.postForEntity(uri,order,null);
 
         return new ResponseEntity<>(new ArrayList<>(),HttpStatus.OK);
     }

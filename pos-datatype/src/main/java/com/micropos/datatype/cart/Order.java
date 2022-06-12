@@ -4,10 +4,11 @@ import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Document("orders")
-public class Order {
+public class Order implements Serializable {
     @MongoId
     public String orderId;
     public String usrId;
